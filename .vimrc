@@ -1,4 +1,4 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+﻿""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "基本设置
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "'|'设置成','
@@ -194,6 +194,19 @@ noremap <C-f> <Esc>/
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle  
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" All of your Plugins must be added before the following line
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -206,33 +219,59 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'L9'
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
-Plugin 'user/L9', {'name': 'newL9'}
+"我的 Bundle:
+Plugin 'winmanager'
+Plugin 'bufexplorer.zip'
+Plugin 'The-NERD-tree'
+Plugin 'minibufexpl.vim'              " buffer插件
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Config Winmanager
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:winManagerWindowLayout='NERDTree|BufExplorer'  
+let g:NERDTree_title="[NERDTree]"
+
+nmap <C-m> :WMToggle<CR><C-w><C-c>
+
+function! NERDTree_Start()  
+    exec 'NERDTree'  
+endfunction
+
+function! NERDTree_IsValid()  
+    return 1  
+endfunction
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Usage
+"输入 :NERDTree 打开 NERDTree 窗口
+"常用快捷键：
+" o 打开/关闭光标所在目录
+" t 在新 tab 中打开文件，并跳转到该 tab
+" T 在新 tab 中打开文件，并不跳转到该 tab
+" p 跳转到父节点
+" P 跳转到根节点
+" q 关闭 NERDTree 窗口
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" minibuffexploer
+""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:miniBufExplMapWindowNavVim = 1   "<C-h,j,k,l>切换到上下左右的窗口中去
+let g:miniBufExplMapWindowNavArrows = 1  "<C-箭头>箭头切换
+"let g:miniBufExplMapCTabSwitchBufs = 1   "<C-Tab>切换窗口(有冲突)
+"let g:miniBufExplModSelTarget = 1  
+let g:miniBufExplMoreThanOne=0
+"常用操作
+" :e <filename> 打开文件
+" :ls    当前打开的buf
+" :bn    下一个buf
+" :bp    前一个buf
+" :b<n>    n是数字，第n个buf
+" :b<tab>    自动补齐
+" :bd    删除
+""""""""""""""""""""""""""""""""""""""""""""""""""
