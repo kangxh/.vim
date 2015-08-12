@@ -1,8 +1,6 @@
 ﻿""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "基本设置
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"'|'设置成','
-let mapleader = ","
 "禁止生成备份文件
 set nobackup
 " Reload .ideavimrc
@@ -170,7 +168,7 @@ noremap <C-a> <Esc>ggVG
 inoremap <C-a> <Esc>ggVGa
 "ctrl+z撤销
 noremap <C-z> u
-inoremap <C-z> <Esc>ua
+inoremap <C-z> <Esc>u
 " Shift 重做 [count] 次被撤销的更改。
 noremap <S-z>  <Esc><C-r>
 inoremap <S-z> <Esc><C-r>a
@@ -232,10 +230,11 @@ filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Config Winmanager
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:winManagerWindowLayout='NERDTree|BufExplorer'  
-let g:NERDTree_title="[NERDTree]"
+let g:winManagerWindowLayout='NERDTree|BufExplorer'
+"设置winmanager的宽度，默认为25
+let g:winManagerWidth = 50
 
-nmap <C-m> :WMToggle<CR><C-w><C-c>
+nmap <leader>m :WMToggle<CR>
 
 function! NERDTree_Start()  
     exec 'NERDTree'  
@@ -257,6 +256,20 @@ endfunction
 " p 跳转到父节点
 " P 跳转到根节点
 " q 关闭 NERDTree 窗口
+let g:NERDTree_title="[NERDTree]"
+let NERDChristmasTree=1										" 类似圣诞树的显示方式
+let NERDTreeAutoCenter=1									" 控制当光标移动超过一定距离时，是否自动将焦点调整到屏中心
+"let NERDTreeBookmarksFile=$VIMFILES.'\NERDTree_bookmarks'	" 指定书签文件
+let NERDTreeMouseMode=2										" 指定鼠标模式(1.双击打开 2.单目录双文件 3.单击打开)
+let NERDTreeShowBookmarks=1									" 是否默认显示书签列表
+let NERDTreeShowFiles=1										" 是否默认显示文件
+let NERDTreeShowHidden=0									" 是否默认显示隐藏文件
+let NERDTreeShowLineNumbers=0								" 是否默认显示行号
+let NERDTreeWinPos='left'									" 窗口位置（'left' or 'right'）
+let NERDTreeWinSize=24										" 窗口宽度
+"let NERDTreeQuitOnOpen=1									" 当通过NERD Tree打开文件自动退出NERDTree界面
+"nnoremap <Leader>nt :NERDTree<CR>		" <Leader> + nt	->打开NERDTree界面
+"nmap <silent> <F3> :NERDTree<CR>		" <Leader> + nt	->打开NERDTree界面
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " minibuffexploer
