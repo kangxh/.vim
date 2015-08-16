@@ -170,6 +170,7 @@ vnoremap <C-x> "+d
 " Ctrl+v 粘贴
 noremap <C-v> "*p
 inoremap <C-v> <Esc>"*pa
+cnoremap <C-v> <C-r>+
 " Ctrl+s 保存
 noremap <C-s> <Esc>:w<CR>
 inoremap <C-s> <Esc>:w<CR>a
