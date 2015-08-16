@@ -232,7 +232,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 "我的 Bundle:
-Plugin 'winmanager'
+Plugin 'git@github.com:kangxh/winmanager.git'
 Plugin 'bufexplorer.zip'
 Plugin 'The-NERD-tree'
 Plugin 'minibufexpl.vim'              " buffer插件
