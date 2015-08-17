@@ -177,6 +177,7 @@ inoremap <C-s> <Esc>:w<CR>a
 " Ctrl+d 复制当前行
 noremap <C-d> yyp
 inoremap <C-d> <Esc>yypa
+vnoremap <C-d> ykp
 " 全选
 noremap <C-a> <Esc>ggVG
 inoremap <C-a> <Esc>ggVGa
