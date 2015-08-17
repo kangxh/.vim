@@ -39,7 +39,7 @@ cmap x $$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 "
 "" code navigation
 "nnoremap <space>] :action GotoImplementation<cr>
-"nnoremap <space>[ :action GotoSuperMethod<cr>
+nnoremap <C-u> :action GotoSuperMethod<cr>
 "nnoremap <space>u :action FindUsages<cr>
 "nnoremap <space>gt :action GotoTest<cr>
 "nnoremap \r :action RunClass<cr>
