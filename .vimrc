@@ -4,9 +4,11 @@
 "禁止生成备份文件
 set nobackup
 " Reload .ideavimrc
-nnoremap <Space>vs :source ~/.vimrc<CR>
+nnoremap <leader>vs :source ~/.vimrc<CR>
 "    backspace	specifies what <BS>, CTRL-W, etc. can do in Insert mode
 set bs=2
+"E303: Unable to open swap file
+set directory=.,$TEMP
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 显示相关  

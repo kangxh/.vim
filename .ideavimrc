@@ -4,7 +4,7 @@
 source ~/.vimrc
 
 " Reload .ideavimrc
-nnoremap <Space>vs :source ~/.ideavimrc<CR>
+nnoremap <leader>vs :source ~/.ideavimrc<CR>
 
 nnoremap <C-p> :action QuickJavaDoc<CR>
 
