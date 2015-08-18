@@ -199,7 +199,7 @@ inoremap <A-=> <Esc><C-a>a
 noremap <A--> <C-x>
 inoremap <A--> <Esc><C-x>a
 " clear the search buffer when hitting return
-nnoremap <leader>/ <Esc>/$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$<CR>
+nnoremap <leader>/ <Esc>:nohlsearch<CR>
 " 视图模式时,查询复制当前选中,方便查询
 vnoremap <C-f> "+y<Esc>/<C-r>"
 noremap <C-f> <Esc>/
