@@ -235,7 +235,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 "ÎÒµÄ Bundle:
-Plugin 'https://github.com/kangxh/.vim.git'
+Plugin 'https://github.com/kangxh/winmanager.git'
 Plugin 'bufexplorer.zip'
 Plugin 'The-NERD-tree'
 Plugin 'minibufexpl.vim'              " buffer²å¼þ
