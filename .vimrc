@@ -78,11 +78,12 @@ set directory=.,$TEMP
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 显示相关  
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"color desert  " 设置背景主题 
+"colorscheme desert  		" 配色方案
 colorscheme molokai            " 配色方案
 "colorscheme solarized          " 配色方案
-"colorscheme obsidian          " 配色方案
+"colorscheme obsidian          	" 配色方案
 if !(g:isGUI)
+	colorscheme obsidian
 	set t_Co=256
 endif
 
