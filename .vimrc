@@ -170,8 +170,8 @@ vnoremap <C-c> "+y
 " Ctrl+x     
 vnoremap <C-x> "+d
 " Ctrl+v 粘贴
-noremap <C-v> "+gP
-inoremap <C-v> <Esc>"+gpi
+noremap <C-v> "+P
+inoremap <C-v> <Esc>"+pa
 cnoremap <C-v> <C-r>+
 " Ctrl+s 保存
 noremap <C-s> <Esc>:w<CR>
@@ -235,7 +235,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 "我的 Bundle:
-Plugin 'git@github.com:kangxh/winmanager.git'
+Plugin 'https://github.com/kangxh/.vim.git'
 Plugin 'bufexplorer.zip'
 Plugin 'The-NERD-tree'
 Plugin 'minibufexpl.vim'              " buffer插件
