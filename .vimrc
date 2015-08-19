@@ -1,3 +1,27 @@
+" =============================================================================
+"        << 判断操作系统是 Windows 还是 Linux 和判断是终端还是 Gvim >>
+" =============================================================================
+ 
+" -----------------------------------------------------------------------------
+"  < 判断操作系统是否是 Windows 还是 Linux >
+" -----------------------------------------------------------------------------
+let g:iswindows = 0
+let g:islinux = 0
+if(has("win32") || has("win64") || has("win95") || has("win16"))
+    let g:iswindows = 1
+else
+    let g:islinux = 1
+endif
+ 
+" -----------------------------------------------------------------------------
+"  < 判断是终端还是 Gvim >
+" -----------------------------------------------------------------------------
+if has("gui_running")
+    let g:isGUI = 1
+else
+    let g:isGUI = 0
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle  
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -58,7 +82,9 @@ set directory=.,$TEMP
 colorscheme molokai            " 配色方案
 "colorscheme solarized          " 配色方案
 "colorscheme obsidian          " 配色方案
-set t_Co=256
+if !(g:isGUI)
+	set t_Co=256
+endif
 
 " 开启语法高亮功能
 syntax enable
@@ -73,10 +99,10 @@ syntax on
 "let $LANG='en'
 set encoding=utf-8  
 set fileencodings=utf-8,chinese,latin-1  
-if has("win32")  
- set fileencoding=chinese  
+if g:iswindows  
+ 	set fileencoding=chinese  
 else  
- set fileencoding=utf-8  
+ 	set fileencoding=utf-8  
 endif  
 "解决菜单乱码  
 source $VIMRUNTIME/delmenu.vim  
@@ -175,7 +201,7 @@ elseif has("gui_win32")
 end
 
 " 打开文件后最大化
-if has('win32')    
+if g:iswindows  
 	au GUIEnter * simalt ~x
 else    
 	au GUIEnter * call MaximizeWindow()
@@ -210,17 +236,21 @@ endfunction
 "
 "	:map <Space> W|     " Use spacebar to move forward a word
 
-" Ctrl+c 复制
-vnoremap <C-c> "+y 
-" Ctrl+x     
-vnoremap <C-x> "+d
-" Ctrl+v 粘贴
-noremap <C-v> "+P
-inoremap <C-v> <Esc>"+pa
-cnoremap <C-v> <C-r>+
-" Ctrl+s 保存
-noremap <C-s> <Esc>:w<CR>
-inoremap <C-s> <Esc>:w<CR>a
+"判断是否是gui,终端这些命令不支持,除非 stty 去除掉终端的命令
+if g:isGUI
+	" Ctrl+c 复制
+	vnoremap <C-c> "+y 
+	" Ctrl+x     
+	vnoremap <C-x> "+d
+	" Ctrl+v 粘贴
+	noremap <C-v> "+P
+	inoremap <C-v> <Esc>"+pa
+	cnoremap <C-v> <C-r>+
+	" Ctrl+s 保存
+	noremap <C-s> <Esc>:w<CR>
+	inoremap <C-s> <Esc>:w<CR>a
+endif
+
 " Ctrl+d 复制当前行
 noremap <C-d> yyp
 inoremap <C-d> <Esc>yypa
