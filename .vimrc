@@ -237,19 +237,19 @@ endfunction
 "	:map <Space> W|     " Use spacebar to move forward a word
 
 "判断是否是gui,终端这些命令不支持,除非 stty 去除掉终端的命令
-if g:isGUI
-	" Ctrl+c 复制
-	vnoremap <C-c> "+y 
-	" Ctrl+x     
-	vnoremap <C-x> "+d
-	" Ctrl+v 粘贴
-	noremap <C-v> "+P
-	inoremap <C-v> <Esc>"+pa
-	cnoremap <C-v> <C-r>+
-	" Ctrl+s 保存
-	noremap <C-s> <Esc>:w<CR>
-	inoremap <C-s> <Esc>:w<CR>a
-endif
+"if g:isGUI
+" Ctrl+c 复制
+vnoremap <C-c> "+y 
+" Ctrl+x     
+vnoremap <C-x> "+d
+" Ctrl+v 粘贴
+noremap <C-v> "+P
+inoremap <C-v> <Esc>"+pa
+cnoremap <C-v> <C-r>+
+" Ctrl+s 保存
+noremap <C-s> <Esc>:w<CR>
+inoremap <C-s> <Esc>:w<CR>a
+"endif
 
 " Ctrl+d 复制当前行
 noremap <C-d> yyp
