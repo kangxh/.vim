@@ -243,7 +243,7 @@ vnoremap <C-c> "+y
 " Ctrl+x     
 vnoremap <C-x> "+d
 " Ctrl+v Õ³Ìù
-noremap <C-v> "+P
+noremap <C-v> "+p
 inoremap <C-v> <Esc>"+pa
 cnoremap <C-v> <C-r>+
 " Ctrl+s ±£´æ
