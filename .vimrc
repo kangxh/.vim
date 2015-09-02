@@ -250,13 +250,14 @@ noremap <C-s> <Esc>:w<CR>
 inoremap <C-s> <Esc>:w<CR>a
 "判断是否是gui,终端这些命令不支持,除非 stty 去除掉终端的命令
 if !(g:isGUI)
-	unmap <C-c> 
+	" Ctrl+c 复制
+	unmap <C-c>
 	" Ctrl+x     
 	unmap <C-x>
 	" Ctrl+v 粘贴
-	unmap <C-v> "+p
+	unmap <C-v>
 	" Ctrl+s 保存
-	unmap <C-s> <Esc>:w<CR>
+	unmap <C-s>
 endif
 
 " Ctrl+d 复制当前行
