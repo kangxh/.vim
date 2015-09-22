@@ -111,7 +111,7 @@ source $VIMRUNTIME/menu.vim
 "解决consle输出乱码  
 language messages zh_CN.utf-8 
 
-set number "显示行号
+"set number "显示行号
 set showmode
 set cul "高亮光标所在行
 set cuc "高亮光标所在列
